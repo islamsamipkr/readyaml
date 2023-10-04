@@ -9,4 +9,12 @@ locals{
         os_type=linuxapps.os_type
         sku_name=linuxapps.sku_name     
       }
+    ]
+])
+}
+
+resource "azurerm_resource_group" "example" {
+for_each={for rg in local.linux_app_list:"${rg.name} => rg}  
+name     = each.value.name
+  location = each.value.location
 }
