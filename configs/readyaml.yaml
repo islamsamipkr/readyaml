@@ -1,3 +1,5 @@
 linuxapp:
   - name: firstlinuxapp
     resource_group: azureresourcegroup
+    os_type: Linux
+    sku_name: P1v2
