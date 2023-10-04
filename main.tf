@@ -5,6 +5,8 @@ locals{
       for linuxapps in try(app.linux_app, []) :{
         name=linuxapps.name
         resource_group_name=linuxapps.resource_group
-        location="West Europe"
+        location=linuxapps.location
+        os_type=linuxapps.os_type
+        sku_name=linuxapps.sku_name     
       }
 }
